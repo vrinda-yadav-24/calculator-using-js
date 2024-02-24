@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>Calculator</title> 
+	<style> 
+	#head{
+		text-align: center;
+		background-color: #ada397;
+		font-family:'copperplate';
+		font-size: 30px;
+	}
+		table { 
+			border: 1px solid black; 
+			margin-left: auto;
+			margin-right: auto;	
+		} 
+		
+		input[type="button"] { 
+			width: 100%; 
+			padding: 20px 40px; 
+			background-color: #eca1a6; 
+			color: white; 
+			font-size: 24px; 
+			font-weight: bold; 
+			border: none; 
+			border-radius: 5px; 
+		} 
+		input[type="button"]:hover{
+			background-color: #ff895d;
+		}
+		
+		input[type="text"] { 
+			padding: 20px 35px; 
+			font-size: 24px; 
+			font-weight: bold; 
+			border: none; 
+			border-radius: 5px; 
+			border: 2px solid black; 
+			background-color: #d6cbd3;
+		} 
+		#fun{
+          background-color: #bdcebe;
+		  color: black;
+		}
+		#fun:hover{
+			background-color: aliceblue;
+		}
+		#rez{
+			background-color: #ada397;
+			color: black;
+		}
+		#rez:hover{
+			background-color: antiquewhite;
+		}
+	</style> 
+</head> 
+
+<body> 
+	<script>
+		function clearScreen() {
+    document.getElementById("result").value = "";
+}
+function display(value) {
+    document.getElementById("result").value += value;
+}
+function calculate() {
+	var c = document.getElementById("result").value;
+    var d = eval(c);
+    document.getElementById("result").value = d;
+}
+function squareroot() {
+    var a=document.getElementById("result").value;
+	var b= eval('Math.sqrt(a)');
+	document.getElementById("result").value=b;
+  }
+  function power() {
+    var p=document.getElementById("result").value;
+	var q = eval('p**');
+	document.getElementById("result").value=q;
+  }
+  function pi(){
+    document.getElementById("result").value=Math.PI;
+  }
+	</script>
+	<table id="calcu"> 
+		<tr>
+			<td colspan="4" id="head"> MY CALCULATOR 
+			</td>
+		</tr>
+		<tr> 
+			<td colspan="3">        
+				<input type="text" id="result"> 
+			</td> 
+			<td><input type="button" value="clr" onclick="clearScreen()" id="rez"></td> 
+		</tr> 
+
+		<tr> 
+			<td><input type="button" value="1" onclick="display('1')"></td> 
+			<td><input type="button" value="2" onclick="display('2')"></td> 
+			<td><input type="button" value="3" onclick="display('3')"></td> 
+			<td><input type="button" value="/" onclick="display('/')" id="fun"></td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" value="4" onclick="display('4')"></td> 
+			<td><input type="button" value="5" onclick="display('5')"></td> 
+			<td><input type="button" value="6" onclick="display('6')"></td> 
+			<td><input type="button" value="*" onclick="display('*')" id="fun"></td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" value="7" onclick="display('7')"></td> 
+			<td><input type="button" value="8" onclick="display('8')"></td> 
+			<td><input type="button" value="9" onclick="display('9')"></td> 
+			<td><input type="button" value="-" onclick="display('-')" id="fun"></td> 
+		</tr> 
+		<tr> 
+			<td><input type="button" value="0" onclick="display('0')"></td> 
+			<td><input type="button" value="." onclick="display('.')"></td> 
+			<td><input type="button" value="=" onclick="calculate()" id="rez"></td> 
+			<td><input type="button" value="+" onclick="display('+')" id="fun"></td> 
+		</tr>
+		<tr> 
+			<td><input type="button" value="^" onclick ="display('**')" id="fun"></td> 
+			<td><input type="button" value="√" onclick="squareroot()" id="fun"></td> 
+			<td><input type="button" value="π" onclick="display(Math.PI)" id="fun"></td> 
+			<td><input type="button" value="%" onclick="display('%')" id="fun"></td> 
+		</tr> 
+	</table> 
+</body>  
+
+</html>
